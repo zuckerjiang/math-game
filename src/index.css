@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-game-bg: #0a0a0c;
+  --color-game-card: #16161e;
+  --color-game-accent: #7aa2f7;
+  --color-game-danger: #f7768e;
+  --color-game-success: #9ccc65;
+  --color-game-warning: #e0af68;
+}
+
+@layer base {
+  body {
+    @apply bg-game-bg text-slate-200 font-sans overflow-y-auto overflow-x-hidden;
+  }
+}
+
+.glass-panel {
+  @apply bg-game-card/80 backdrop-blur-md border border-white/10 shadow-xl;
+}
+
+@keyframes pulse-danger {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-danger {
+  animation: pulse-danger 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
